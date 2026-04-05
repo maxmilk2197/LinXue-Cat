@@ -17,4 +17,16 @@ func _on_退出_button_down() -> void:
 
 
 func 开始移动 ():
-	print("开始移动，中心点：", center_global)
+	print("移动指针-中心点：", center_global)
+
+
+func _on_开始_button_up() -> void:
+	pass # Replace with function body.
+
+
+func _on_设置_button_up() -> void:
+	pass # Replace with function body.
+
+
+func _on_退出_button_up() -> void:
+	pass # Replace with function body.

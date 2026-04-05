@@ -39,7 +39,7 @@ func _ready():
 		var button = buttons[state]
 		button.mouse_entered.connect(_on_button_mouse_entered.bind(state))
 	
-	# 初始定位（无动画）
+	# 初始定位
 	_place_indicator_at(current_state)
 
 func _input(event: InputEvent):
