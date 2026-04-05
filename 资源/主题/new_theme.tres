@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://dutxstr6vc828"]
+
+[ext_resource type="FontFile" uid="uid://d2ygr0lklwi47" path="res://资源/字体/HarmonyOS_Sans_SC_Bold.ttf" id="1_6iiey"]
+[ext_resource type="StyleBox" uid="uid://b6x7enxoh25o0" path="res://资源/StyleBox/new_style_box_flat2.tres" id="2_um3is"]
+[ext_resource type="StyleBox" uid="uid://heqnjb7pu7sm" path="res://资源/StyleBox/new_style_box_flat.tres" id="3_c3reb"]
+
+[resource]
+default_font_size = 40
+Button/fonts/font = ExtResource("1_6iiey")
+Button/styles/hover = ExtResource("3_c3reb")
+Button/styles/normal = ExtResource("2_um3is")
+Button/styles/pressed = ExtResource("3_c3reb")

@@ -1,0 +1,441 @@
+[gd_scene format=3 uid="uid://ctj6c11vi382x"]
+
+[ext_resource type="Script" uid="uid://bre234df4ft72" path="res://脚本/主菜单/开始.gd" id="1_g12k3"]
+[ext_resource type="FontFile" uid="uid://d1nieuful1cdu" path="res://资源/字体/HachiMaruPop-Regular.ttf" id="1_t3c53"]
+[ext_resource type="Theme" uid="uid://dutxstr6vc828" path="res://资源/主题/new_theme.tres" id="2_t3c53"]
+[ext_resource type="Script" uid="uid://7prfym82yjqy" path="res://脚本/主菜单/九宫格.gd" id="3_2wrhp"]
+[ext_resource type="Script" uid="uid://div2g7jyyqnjq" path="res://脚本/主菜单/设置.gd" id="5_2wrhp"]
+[ext_resource type="Script" uid="uid://beogggwi11q2r" path="res://脚本/主菜单/相机.gd" id="5_lsc16"]
+[ext_resource type="Script" uid="uid://dpm5pf7u0x1jk" path="res://脚本/主菜单/存档选项.gd" id="7_argmq"]
+[ext_resource type="Script" uid="uid://db8br61bq77pb" path="res://脚本/主菜单/存档.gd" id="7_jtk3e"]
+[ext_resource type="Script" uid="uid://b0w05488nmf7y" path="res://脚本/主菜单/退出.gd" id="8_1pd7j"]
+[ext_resource type="FontFile" uid="uid://ybycat3wpee3" path="res://资源/字体/HarmonyOS_Sans_SC_Black.ttf" id="9_lv6hd"]
+[ext_resource type="Script" uid="uid://btypduja3vsna" path="res://脚本/主菜单/设置_九宫格.gd" id="10_fs1pa"]
+[ext_resource type="Script" uid="uid://cepostqqi8bbc" path="res://脚本/主菜单/更多设置.gd" id="10_lv6hd"]
+[ext_resource type="Script" uid="uid://biwqnnak67n8l" path="res://脚本/主菜单/更多设置_九宫格_ai_or_link.gd" id="12_5c6ki"]
+[ext_resource type="Script" uid="uid://dwoe0nc3wm6qp" path="res://脚本/主菜单/更多设置_九宫格_关于.gd" id="14_qoyhk"]
+[ext_resource type="Texture2D" uid="uid://d1f7irwm87bnh" path="res://资源/图片/Sprite-0002.svg" id="15_mlvms"]
+[ext_resource type="Script" uid="uid://n6srlcwt0yx1" path="res://脚本/主菜单/指针触发.gd" id="15_xexsn"]
+[ext_resource type="Script" uid="uid://cvojcsn54r8cg" path="res://脚本/主菜单/按钮选择.gd" id="16_v32p7"]
+
+[node name="开始" type="Control" unique_id=1115523598]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g12k3")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1243786524]
+modulate = Color(0.06666667, 0.07450981, 0.09411765, 1)
+self_modulate = Color(0.06666667, 0.07450981, 0.09411765, 1)
+position = Vector2(240, 240)
+script = ExtResource("5_lsc16")
+
+[node name="ColorRect" type="ColorRect" parent="Camera2D" unique_id=342734677]
+visible = false
+offset_left = -240.0
+offset_top = -240.0
+offset_right = 240.0
+offset_bottom = 240.0
+color = Color(0.06666667, 0.07450981, 0.09411765, 1)
+
+[node name="Label" type="Label" parent="." unique_id=616801707]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 41.0
+offset_right = 240.0
+offset_bottom = 140.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_t3c53")
+theme_override_font_sizes/font_size = 53
+text = "养只猫猫"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="主界面" type="NinePatchRect" parent="." unique_id=708097938]
+layout_mode = 0
+offset_left = 93.0
+offset_top = 193.0
+offset_right = 384.0
+offset_bottom = 457.0
+theme = ExtResource("2_t3c53")
+script = ExtResource("3_2wrhp")
+metadata/_edit_lock_ = true
+
+[node name="开始" type="Button" parent="主界面" unique_id=1292504328]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 77.0
+grow_horizontal = 2
+focus_neighbor_top = NodePath("../退出")
+focus_neighbor_bottom = NodePath("../设置")
+focus_next = NodePath("../设置")
+focus_previous = NodePath("../退出")
+text = "开始"
+
+[node name="设置" type="Button" parent="主界面" unique_id=709209077]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -36.5
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_top = NodePath("../开始")
+focus_neighbor_bottom = NodePath("../退出")
+focus_next = NodePath("../退出")
+focus_previous = NodePath("../开始")
+theme = ExtResource("2_t3c53")
+text = "设置"
+
+[node name="退出" type="Button" parent="主界面" unique_id=2084385844]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -72.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_neighbor_top = NodePath("../设置")
+focus_neighbor_bottom = NodePath("../开始")
+focus_next = NodePath("../开始")
+focus_previous = NodePath("../设置")
+theme = ExtResource("2_t3c53")
+text = "退出"
+
+[node name="存档" type="Control" parent="." unique_id=2011103976]
+layout_mode = 1
+anchor_top = -1.0
+anchor_right = 1.0
+grow_horizontal = 2
+script = ExtResource("7_jtk3e")
+
+[node name="存档_返回" type="Button" parent="存档" unique_id=824599698]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 89.0
+theme = ExtResource("2_t3c53")
+text = "返回"
+
+[node name="存档选项" type="NinePatchRect" parent="存档" unique_id=1165372607]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 432.0
+offset_bottom = 460.0
+theme = ExtResource("2_t3c53")
+script = ExtResource("7_argmq")
+
+[node name="新游戏" type="Button" parent="存档/存档选项" unique_id=1077370838]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 84.0
+grow_horizontal = 2
+text = "新游戏"
+
+[node name="ColorRect" type="ColorRect" parent="存档" unique_id=1545908563]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0040001
+anchor_top = -2.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+offset_left = -0.079956055
+offset_bottom = 38.0
+
+[node name="退出" type="Control" parent="." unique_id=906073344]
+layout_mode = 1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 2.0
+script = ExtResource("8_1pd7j")
+
+[node name="Label" type="Label" parent="退出" unique_id=2130548465]
+layout_mode = 0
+offset_right = 478.0
+offset_bottom = 117.0
+theme_override_fonts/font = ExtResource("9_lv6hd")
+theme_override_font_sizes/font_size = 47
+text = "确定要退出吗?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="退出" unique_id=1163101890]
+visible = false
+z_index = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.0040001
+anchor_top = -2.0
+anchor_right = 2.0
+anchor_bottom = 1.0
+offset_left = -0.079956055
+offset_right = 480.0
+offset_bottom = 38.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="退出" unique_id=1279531276]
+layout_mode = 0
+offset_left = 36.0
+offset_top = 117.0
+offset_right = 457.0
+offset_bottom = 444.0
+
+[node name="退出_确认" type="Button" parent="退出/NinePatchRect" unique_id=821488056]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -137.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_t3c53")
+text = "确认"
+
+[node name="退出_返回" type="Button" parent="退出/NinePatchRect" unique_id=74771334]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+theme = ExtResource("2_t3c53")
+text = "返回"
+
+[node name="设置" type="Control" parent="." unique_id=1607524556]
+anchors_preset = 0
+offset_left = 480.0
+offset_right = 960.0
+offset_bottom = 480.0
+script = ExtResource("5_2wrhp")
+
+[node name="设置_返回" type="Button" parent="设置" unique_id=671060041]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 89.0
+theme = ExtResource("2_t3c53")
+text = "返回"
+
+[node name="设置_九宫格" type="NinePatchRect" parent="设置" unique_id=532905656]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 432.0
+offset_bottom = 460.0
+theme = ExtResource("2_t3c53")
+script = ExtResource("10_fs1pa")
+
+[node name="音量设置" type="Button" parent="设置/设置_九宫格" unique_id=5743614]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 95.0
+grow_horizontal = 2
+text = "音量设置"
+
+[node name="AI or Link 设置" type="Button" parent="设置/设置_九宫格" unique_id=905571100]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.3580247
+anchor_right = 1.02
+anchor_bottom = 0.65123457
+offset_right = -8.0
+offset_bottom = 1.1728363
+grow_horizontal = 2
+text = "AI/Link设置"
+metadata/_edit_use_anchors_ = true
+
+[node name="关于" type="Button" parent="设置/设置_九宫格" unique_id=494191290]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -92.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "关于"
+
+[node name="更多设置" type="Control" parent="." unique_id=1566126720]
+anchors_preset = 0
+offset_left = 960.0
+offset_right = 1440.0
+offset_bottom = 480.0
+script = ExtResource("10_lv6hd")
+
+[node name="设置_返回" type="Button" parent="更多设置" unique_id=365253178]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 89.0
+theme = ExtResource("2_t3c53")
+text = "返回"
+
+[node name="更多设置_九宫格_音量" type="NinePatchRect" parent="更多设置" unique_id=1738167956]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 432.0
+offset_bottom = 460.0
+theme = ExtResource("2_t3c53")
+
+[node name="Label" type="Label" parent="更多设置/更多设置_九宫格_音量" unique_id=779561728]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 55.0
+text = "这是一个音量设置"
+
+[node name="更多设置_九宫格_AI or Link" type="NinePatchRect" parent="更多设置" unique_id=275955741 node_paths=PackedStringArray("API密钥", "AI模型", "API地址")]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 432.0
+offset_bottom = 432.0
+theme = ExtResource("2_t3c53")
+script = ExtResource("12_5c6ki")
+"API密钥" = NodePath("API密钥/输入框_API密钥")
+"AI模型" = NodePath("AI模型/输入框_AI模型")
+"API地址" = NodePath("API地址/输入框_API地址")
+
+[node name="API地址" type="Label" parent="更多设置/更多设置_九宫格_AI or Link" unique_id=649658084]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 56.0
+grow_horizontal = 2
+text = "API地址:"
+
+[node name="输入框_API地址" type="LineEdit" parent="更多设置/更多设置_九宫格_AI or Link/API地址" unique_id=12952081]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 52.0
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="API密钥" type="Label" parent="更多设置/更多设置_九宫格_AI or Link" unique_id=917012752]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 116.0
+offset_bottom = 172.0
+grow_horizontal = 2
+text = "API密钥:"
+
+[node name="输入框_API密钥" type="LineEdit" parent="更多设置/更多设置_九宫格_AI or Link/API密钥" unique_id=93719055]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 52.0
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="AI模型" type="Label" parent="更多设置/更多设置_九宫格_AI or Link" unique_id=202948523]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 231.0
+offset_bottom = 287.0
+grow_horizontal = 2
+text = "AI模型:"
+
+[node name="输入框_AI模型" type="LineEdit" parent="更多设置/更多设置_九宫格_AI or Link/AI模型" unique_id=453538811]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 52.0
+offset_bottom = 115.0
+grow_horizontal = 2
+
+[node name="更多设置_九宫格_关于" type="NinePatchRect" parent="更多设置" unique_id=1503676677]
+visible = false
+layout_mode = 0
+offset_left = 32.0
+offset_top = 140.0
+offset_right = 432.0
+offset_bottom = 460.0
+theme = ExtResource("2_t3c53")
+script = ExtResource("14_qoyhk")
+
+[node name="Label" type="Label" parent="更多设置/更多设置_九宫格_关于" unique_id=1900590100]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 55.0
+text = "关于:"
+
+[node name="Label2" type="Label" parent="更多设置/更多设置_九宫格_关于" unique_id=1195493281]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 92.0
+offset_right = 392.0
+offset_bottom = 220.0
+text = "测试"
+
+[node name="指针" type="Control" parent="." unique_id=1297686098]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("15_xexsn")
+
+[node name="选择指针" type="NinePatchRect" parent="指针" unique_id=1298600544]
+texture_filter = 1
+layout_mode = 0
+offset_left = 93.0
+offset_top = 192.0
+offset_right = 389.0
+offset_bottom = 274.0
+texture = ExtResource("15_mlvms")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="选择" type="NinePatchRect" parent="指针" unique_id=2092676754]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 93.0
+offset_top = 192.0
+offset_right = 389.0
+offset_bottom = 274.0
+texture = ExtResource("15_mlvms")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 14
+patch_margin_top = 14
+patch_margin_right = 14
+patch_margin_bottom = 14
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+script = ExtResource("16_v32p7")
+
+[connection signal="button_down" from="主界面/开始" to="指针" method="_on_开始_button_down"]
+[connection signal="pressed" from="主界面/开始" to="主界面" method="_on_开始_pressed"]
+[connection signal="button_down" from="主界面/设置" to="指针" method="_on_设置_button_down"]
+[connection signal="pressed" from="主界面/设置" to="主界面" method="_on_设置_pressed"]
+[connection signal="button_down" from="主界面/退出" to="指针" method="_on_退出_button_down"]
+[connection signal="pressed" from="主界面/退出" to="主界面" method="_on_退出_pressed"]
+[connection signal="pressed" from="存档/存档_返回" to="存档" method="_on_存档_返回_pressed"]
+[connection signal="pressed" from="存档/存档选项/新游戏" to="存档/存档选项" method="_on_新游戏_pressed"]
+[connection signal="pressed" from="退出/NinePatchRect/退出_确认" to="退出" method="_on_退出_确认_pressed"]
+[connection signal="pressed" from="退出/NinePatchRect/退出_返回" to="退出" method="_on_退出_返回_pressed"]
+[connection signal="pressed" from="设置/设置_返回" to="设置" method="_on_设置_返回_pressed"]
+[connection signal="pressed" from="设置/设置_九宫格/音量设置" to="设置/设置_九宫格" method="_on_音量设置_pressed"]
+[connection signal="pressed" from="设置/设置_九宫格/AI or Link 设置" to="设置/设置_九宫格" method="_on_ai_or_link_设置_pressed"]
+[connection signal="pressed" from="设置/设置_九宫格/关于" to="设置/设置_九宫格" method="_on_关于_pressed"]
+[connection signal="pressed" from="更多设置/设置_返回" to="更多设置" method="_on_设置_返回_pressed"]
+[connection signal="pressed" from="更多设置/设置_返回" to="更多设置/更多设置_九宫格_AI or Link" method="_on_设置_返回_pressed"]
