@@ -265,16 +265,25 @@ anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = -92.0
+offset_right = -208.0
 offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "关于"
 
+[node name="测试选项" type="Button" parent="设置/设置_九宫格" unique_id=1423894802]
+layout_mode = 0
+offset_left = 208.0
+offset_top = 228.0
+offset_right = 400.0
+offset_bottom = 324.0
+text = "测试选项"
+
 [node name="更多设置" type="Control" parent="." unique_id=1566126720]
 anchors_preset = 0
 offset_left = 960.0
 offset_right = 1440.0
-offset_bottom = 480.0
+offset_bottom = 960.0
 script = ExtResource("10_lv6hd")
 
 [node name="设置_返回" type="Button" parent="更多设置" unique_id=365253178]
@@ -285,11 +294,12 @@ theme = ExtResource("2_t3c53")
 text = "返回"
 
 [node name="更多设置_九宫格_音量" type="NinePatchRect" parent="更多设置" unique_id=1738167956]
+visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 140.0
 offset_right = 432.0
-offset_bottom = 460.0
+offset_bottom = 960.0
 theme = ExtResource("2_t3c53")
 
 [node name="Label" type="Label" parent="更多设置/更多设置_九宫格_音量" unique_id=779561728]
@@ -299,11 +309,12 @@ offset_bottom = 55.0
 text = "这是一个音量设置"
 
 [node name="更多设置_九宫格_AI or Link" type="NinePatchRect" parent="更多设置" unique_id=275955741 node_paths=PackedStringArray("API密钥", "AI模型", "API地址")]
+visible = false
 layout_mode = 0
 offset_left = 32.0
 offset_top = 112.0
 offset_right = 432.0
-offset_bottom = 432.0
+offset_bottom = 960.0
 theme = ExtResource("2_t3c53")
 script = ExtResource("12_5c6ki")
 "API密钥" = NodePath("API密钥/输入框_API密钥")
@@ -366,7 +377,7 @@ layout_mode = 0
 offset_left = 32.0
 offset_top = 140.0
 offset_right = 432.0
-offset_bottom = 460.0
+offset_bottom = 952.0
 theme = ExtResource("2_t3c53")
 script = ExtResource("14_qoyhk")
 
@@ -383,6 +394,17 @@ offset_top = 92.0
 offset_right = 392.0
 offset_bottom = 220.0
 text = "测试"
+
+[node name="测试选项" type="NinePatchRect" parent="更多设置" unique_id=267403275]
+layout_mode = 0
+offset_right = 480.0
+offset_bottom = 960.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="更多设置/测试选项" unique_id=1332005672]
+layout_mode = 0
+offset_top = 164.0
+offset_right = 480.0
+offset_bottom = 372.0
 
 [node name="指针" type="Control" parent="." unique_id=1297686098 node_paths=PackedStringArray("开始按钮", "设置按钮", "退出按钮")]
 anchors_preset = 0
@@ -445,5 +467,6 @@ script = ExtResource("16_v32p7")
 [connection signal="pressed" from="设置/设置_九宫格/音量设置" to="设置/设置_九宫格" method="_on_音量设置_pressed"]
 [connection signal="pressed" from="设置/设置_九宫格/AI or Link 设置" to="设置/设置_九宫格" method="_on_ai_or_link_设置_pressed"]
 [connection signal="pressed" from="设置/设置_九宫格/关于" to="设置/设置_九宫格" method="_on_关于_pressed"]
+[connection signal="pressed" from="设置/设置_九宫格/测试选项" to="设置/设置_九宫格" method="_on_测试选项_pressed"]
 [connection signal="pressed" from="更多设置/设置_返回" to="更多设置" method="_on_设置_返回_pressed"]
 [connection signal="pressed" from="更多设置/设置_返回" to="更多设置/更多设置_九宫格_AI or Link" method="_on_设置_返回_pressed"]
