@@ -44,9 +44,6 @@ func change_state(new_state):
 		 .set_ease(Tween.EASE_OUT)
 
 
-
-
-
 func _input(event: InputEvent):
 	# 鼠标/触摸按下
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:

@@ -425,10 +425,8 @@ script = ExtResource("15_xexsn")
 [node name="选择指针" type="NinePatchRect" parent="指针" unique_id=1298600544]
 texture_filter = 1
 layout_mode = 0
-offset_left = 88.0
-offset_top = 192.0
-offset_right = 389.0
-offset_bottom = 274.0
+offset_right = 369.0
+offset_bottom = 104.0
 texture = ExtResource("15_mlvms")
 region_rect = Rect2(0, 0, 64, 64)
 patch_margin_left = 14

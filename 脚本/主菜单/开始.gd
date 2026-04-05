@@ -5,7 +5,6 @@ extends Control
 func _ready() -> void:
 	$Camera2D/ColorRect.show()
 	camera.change_state(camera.State.主菜单)
-	$"主界面/开始".grab_focus()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
