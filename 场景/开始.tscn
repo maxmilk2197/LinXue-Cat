@@ -426,10 +426,13 @@ axis_stretch_vertical = 1
 script = ExtResource("16_v32p7")
 
 [connection signal="button_down" from="主界面/开始" to="指针" method="_on_开始_button_down"]
+[connection signal="button_up" from="主界面/开始" to="指针" method="_on_开始_button_up"]
 [connection signal="pressed" from="主界面/开始" to="主界面" method="_on_开始_pressed"]
 [connection signal="button_down" from="主界面/设置" to="指针" method="_on_设置_button_down"]
+[connection signal="button_up" from="主界面/设置" to="指针" method="_on_设置_button_up"]
 [connection signal="pressed" from="主界面/设置" to="主界面" method="_on_设置_pressed"]
 [connection signal="button_down" from="主界面/退出" to="指针" method="_on_退出_button_down"]
+[connection signal="button_up" from="主界面/退出" to="指针" method="_on_退出_button_up"]
 [connection signal="pressed" from="主界面/退出" to="主界面" method="_on_退出_pressed"]
 [connection signal="pressed" from="存档/存档_返回" to="存档" method="_on_存档_返回_pressed"]
 [connection signal="pressed" from="存档/存档选项/新游戏" to="存档/存档选项" method="_on_新游戏_pressed"]
