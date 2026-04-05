@@ -384,16 +384,19 @@ offset_right = 392.0
 offset_bottom = 220.0
 text = "测试"
 
-[node name="指针" type="Control" parent="." unique_id=1297686098]
+[node name="指针" type="Control" parent="." unique_id=1297686098 node_paths=PackedStringArray("开始按钮", "设置按钮", "退出按钮")]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("15_xexsn")
+"开始按钮" = NodePath("../主界面/开始")
+"设置按钮" = NodePath("../主界面/设置")
+"退出按钮" = NodePath("../主界面/退出")
 
 [node name="选择指针" type="NinePatchRect" parent="指针" unique_id=1298600544]
 texture_filter = 1
 layout_mode = 0
-offset_left = 93.0
+offset_left = 88.0
 offset_top = 192.0
 offset_right = 389.0
 offset_bottom = 274.0

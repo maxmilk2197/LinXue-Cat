@@ -1,29 +1,15 @@
 extends Control
 
-var center_global : Vector2
+@export var 开始按钮 : Button
+@export var 设置按钮 : Button
+@export var 退出按钮 : Button
+@onready var 选择指针 = $"选择指针"
 
-func _on_开始_button_down() -> void:
-	center_global = $"../主界面/开始".global_position + $"../主界面/开始".size / 2
-	开始移动()
-func _on_开始_button_up() -> void:
-	center_global = $"../主界面/开始".global_position + $"../主界面/开始".size / 2
-	开始移动()
+func _ready():
+	开始按钮.mouse_entered.connect(_on_button_mouse_entered.bind(开始按钮, 选择指针.State.开始游戏))
+	设置按钮.mouse_entered.connect(_on_button_mouse_entered.bind(设置按钮, 选择指针.State.设置))
+	退出按钮.mouse_entered.connect(_on_button_mouse_entered.bind(退出按钮, 选择指针.current_state))
 
-func _on_设置_button_down() -> void:
-	center_global = $"../主界面/设置".global_position + $"../主界面/设置".size / 2
-	开始移动()
-func _on_设置_button_up() -> void:
-	center_global = $"../主界面/设置".global_position + $"../主界面/设置".size / 2
-	开始移动()
-
-
-func _on_退出_button_up() -> void:
-	center_global = $"../主界面/退出".global_position + $"../主界面/退出".size / 2
-	开始移动()
-func _on_退出_button_down() -> void:
-	center_global = $"../主界面/退出".global_position + $"../主界面/退出".size / 2
-	开始移动()
-
-
-func 开始移动 ():
-	print("移动指针-中心点：", center_global)
+func _on_button_mouse_entered(btn: Button, target_state: int):
+	var center = btn.global_position + btn.size / 2
+	选择指针.move_to(center, target_state)
